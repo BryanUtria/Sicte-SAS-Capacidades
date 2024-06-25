@@ -1,0 +1,618 @@
+/* Contenedor principal */
+#Principal-Container {
+    display: flex; /* Utiliza el modelo de caja flexible */
+    height: 100vh; /* Toma toda la altura del viewport */
+    width: 100%; /* Toma todo el ancho disponible */
+}
+
+/* Menu Lateral */
+#Principal-Menu-Lateral {
+    background-color: #0B1A46; /* Color de fondo azul oscuro */
+    width: 200px; /* Ancho fijo del menú lateral */
+    height: 98vh; /* Toma casi toda la altura del viewport */
+    padding: 10px; /* Relleno interno */
+    position: fixed; /* Posicionamiento fijo */
+    top: 0; /* Desde la parte superior */
+    left: 0; /* Desde la parte izquierda */
+    margin: 5px; /* Margen exterior */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+/* Estilos para el título del menú lateral */
+#Principal-Titulo {
+    color: white; /* Color del texto */
+    text-align: center; /* Alineación centrada del texto */
+    padding: 30px 0px 20px 0px; /* Relleno del título */
+}
+
+/* Estilos para el título h3 dentro del menú lateral */
+#Principal-Titulo h3 {
+    margin: 0; /* Elimina el margen */
+    padding-bottom: 10px; /* Relleno inferior */
+    border-bottom: 1px solid white; /* Línea inferior */
+}
+
+
+
+
+
+/* Estilos para la lista del menú lateral */
+#Principal-Lista ul {
+    list-style-type: none; /* Elimina los marcadores de lista */
+    padding: 0; /* Elimina el relleno */
+}
+
+/* Estilos para los elementos de la lista del menú lateral */
+#Principal-Lista ul li {
+    margin-bottom: 5px;
+    padding: 5px 5px 5px 5px; /* Relleno superior e inferior */
+    text-align: left; /* Alineación del texto a la izquierda */
+    color: white; /* Color del texto */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el elemento */
+    font-size: 18px; /* Tamaño de fuente */
+}
+
+#Principal-Lista ul li i{
+    padding-right: 10px;
+}
+
+#Principal-Lista li {
+    text-decoration: none;
+    display: flex;
+    color: #64b2ff;
+    font-size: 15px;
+    font-family: sans-serif;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+
+    &:hover {
+        color: #fff;
+        background-color: #e0792a;
+        transition: 0.3s all ease;
+        border-radius: 5px;
+    }
+}
+
+#Principal-Lista ul li.active {
+    background-color: #e0792a; /* Cambia el color de fondo al elemento activo */
+    border-radius: 5px;
+}
+
+
+
+
+
+/* Contenido */
+#Principal-Visualizar {
+    position: fixed; /* Posicionamiento fijo */
+    top: 0; /* Desde la parte superior */
+    left: 0; /* Desde la parte izquierda */
+    width: calc(100% - 215px); /* Ancho dinámico basado en el ancho del menú lateral */
+    flex-grow: 1; /* Ocupa el espacio restante */
+    background-color: white; /* Color de fondo */
+    padding: 15px; /* Relleno interno */
+    margin: 5px 5px 5px 210px; /* Margen exterior */
+    height: 98vh; /* Toma casi toda la altura del viewport */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+#Principal-Visualizar #Botones-Encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#Principal-Visualizar #Botones-Encabezado #Boton-Borrar-Filtros {
+    background-color: rgb(1, 158, 1);
+    color: #fff;
+    margin: 0px 10px 5px 0px;
+}
+
+#Principal-Visualizar #Botones-Encabezado #Boton-Borrar-Filtros:hover {
+    background-color: #e0792a; /* Color de fondo al pasar el cursor */
+}
+
+#Principal-Visualizar #Botones-Encabezado #Boton-Editar {
+    background-color: rgb(1, 158, 1);
+    color: #fff;
+    margin: 0px 10px 5px 0px;
+}
+
+#Principal-Visualizar #Botones-Encabezado #Boton-Editar .btn-naranja {
+    background-color: orange;
+    color: white;
+}
+
+#Principal-Visualizar #Botones-Encabezado #Boton-Editar:hover {
+    background-color: #e0792a; /* Color de fondo al pasar el cursor */
+}
+
+#Principal-Visualizar #Botones-Encabezado #Boton-Exportar-Excel {
+    background-color: rgb(1, 158, 1);
+    color: #fff;
+    margin: 0px 10px 5px 0px;
+}
+
+#Principal-Visualizar #Botones-Encabezado #Boton-Exportar-Excel:hover {
+    background-color: #e0792a; /* Color de fondo al pasar el cursor */
+}
+
+/* Contenedor para tablas */
+#Principal-Visualizar .tabla-container {
+    overflow: auto;
+    height: 82vh;
+    width: 100%;
+    border-radius: 5px;
+}
+
+/* Estilos para las barras de desplazamiento */
+#Principal-ValidarMovil .carta-container::-webkit-scrollbar,
+#Principal-Agregar-Botones .dropdown .dropdown-menu::-webkit-scrollbar, #Principal-Agregar-Agregados .tabla-container::-webkit-scrollbar,
+#Principal-Agregar-Pendientes .tabla-container::-webkit-scrollbar, #Principal-Visualizar .tabla-container::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+#Principal-ValidarMovil .carta-container::-webkit-scrollbar-thumb,
+#Principal-Agregar-Botones .dropdown .dropdown-menu::-webkit-scrollbar-thumb, #Principal-Agregar-Agregados .tabla-container::-webkit-scrollbar-thumb,
+#Principal-Agregar-Pendientes .tabla-container::-webkit-scrollbar-thumb, #Principal-Visualizar .tabla-container::-webkit-scrollbar-thumb {
+    background-color: #e0792a;
+    border-radius: 5px;
+}
+
+#Principal-ValidarMovil .carta-container::-webkit-scrollbar-thumb:hover,
+#Principal-Agregar-Botones .dropdown .dropdown-menu::-webkit-scrollbar-thumb:hover, #Principal-Agregar-Agregados .tabla-container::-webkit-scrollbar-thumb:hover,
+#Principal-Agregar-Pendientes .tabla-container::-webkit-scrollbar-thumb:hover, #Principal-Visualizar .tabla-container::-webkit-scrollbar-thumb:hover {
+    background-color: #ff6f00;
+}
+
+#Principal-ValidarMovil .carta-container::-webkit-scrollbar-track,
+#Principal-Agregar-Agregados .tabla-container::-webkit-scrollbar-track,
+#Principal-Agregar-Pendientes .tabla-container::-webkit-scrollbar-track, #Principal-Visualizar .tabla-container::-webkit-scrollbar-track {
+    background-color: #ddd;
+}
+
+/* Estilos para tablas */
+#Principal-Agregar-Agregados table,
+#Principal-Agregar-Pendientes table, #Principal-Visualizar table {
+    width: 100%; /* Ancho completo */
+    border-collapse: collapse; /* Colapsa los bordes de la tabla */
+}
+
+#Principal-Agregar-Agregados thead,
+#Principal-Agregar-Pendientes thead, #Principal-Visualizar thead {
+    position: sticky;
+    top: 0;
+}
+
+#Principal-Agregar-Agregados thead th:hover,
+#Principal-Agregar-Pendientes thead th:hover, #Principal-Visualizar thead th:hover {
+    background-color: #e0792a;
+}
+
+#Principal-Agregar-Agregados,
+#Principal-Agregar-Pendientes, #Principal-Visualizar #Entrada-Texto th{
+    background-color: #1c2d5f;
+}
+
+#Principal-Visualizar #Entrada-Texto th:hover {
+    background-color: #e0792a;
+}
+
+#Principal-Agregar-Agregados thead input,
+#Principal-Agregar-Pendientes thead input, #Principal-Visualizar thead input {
+    padding: 4px;
+    margin-top: 4px;
+}
+
+/* Estilos para celdas de tabla */
+#Principal-Agregar-Agregados td,
+#Principal-Agregar-Pendientes td, #Principal-Visualizar td {
+    border: 1px solid #ddd; /* Borde de celda */
+    padding: 8px; /* Relleno interno */
+    text-align: center; /* Alineación del texto a la izquierda */
+    font-size: 11px;
+}
+
+#Principal-Agregar-Agregados th,
+#Principal-Agregar-Pendientes th, #Principal-Visualizar th {
+    border-left: 1px solid #ddd; /* Borde de celda */
+    border-right: 1px solid #ddd; /* Borde de celda */
+    padding: 8px; /* Relleno interno */
+    text-align: center; /* Alineación del texto a la izquierda */
+    background-color: #223775; /* Color de fondo */
+    color: white; /* Color del texto */
+    font-size: 13px;
+    position: relative;
+}
+
+/* Estilos para filas de tabla alternadas */
+#Principal-Agregar-Agregados tr:nth-child(even),
+#Principal-Agregar-Pendientes tr:nth-child(even), #Principal-Visualizar tr:nth-child(even) {
+    background-color: #f2f2f2; /* Color de fondo */
+}
+
+/* Estilos para filas de tabla al pasar el cursor */
+#Principal-Agregar-Agregados tr:hover,
+#Principal-Agregar-Pendientes tr:hover, #Principal-Visualizar tr:hover {
+    background-color: #a6dfa8; /* Color de fondo al pasar el cursor */
+}
+
+#Principal-Agregar #Checkbox-Filas, #Principal-Visualizar #Checkbox-Filas {
+    width: 20px;
+    height: 20px;
+}
+
+#Principal-Agregar #Checkbox-Encabezado, #Principal-Visualizar #Checkbox-Encabezado {
+    width: 20px;
+    height: 20px;
+}
+
+#Principal-Agregar .fila-seleccionada, #Principal-Visualizar .fila-seleccionada {
+    background-color: rgb(80, 141, 80) !important;
+    color: white; /* Para asegurar que el texto sea visible */
+}
+
+#Principal-Visualizar thead {
+    z-index: 2;
+}
+
+#Principal-Visualizar tbody {
+    z-index: 1;
+}
+
+
+
+
+
+#Principal-ValidarPersonal #Principal-Visualizar .tabla-container {
+    overflow: auto;
+    height: 82vh;
+    width: 100%;
+    border-radius: 5px;
+}
+
+#Principal-ValidarPersonal #Boton-equis {
+    margin-right: 20px;
+    background-color: red;
+    color: white;
+    border-color: red;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+#Principal-ValidarPersonal #Boton-chulo {
+    background-color: green;
+    color: white;
+    border-color: green;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+#Principal-ValidarPersonal .fila-equis {
+    background-color: rgb(211, 51, 51) !important;
+    color: white; /* Para asegurar que el texto sea visible */
+}
+
+#Principal-ValidarPersonal .fila-chulo {
+    background-color: rgb(80, 141, 80) !important;
+    color: white; /* Para asegurar que el texto sea visible */
+}
+
+#Principal-Agregar-Agregados #piePagina,
+#Principal-Agregar-Pendientes #piePagina, #Principal-Visualizar #piePagina{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 7px;
+}
+
+#Principal-Visualizar #Botones-piePagina{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+#Principal-Agregar-Botones #Boton-Aplicar,
+#Principal-Visualizar #Botones-piePagina #Boton-Aplicar{
+    margin: 0px 10px 0px 0px;
+    background-color: green;
+    color: white;
+}
+
+#Principal-Agregar-Botones #Boton-Aplicar:hover,
+#Principal-Visualizar #Botones-piePagina #Boton-Aplicar:hover {
+    background-color: #236625;
+}
+
+#Principal-Agregar-Botones #Boton-Limpiar,
+#Principal-Visualizar #Botones-piePagina #Boton-Limpiar {
+    margin: 0px 10px 0px 0px;
+    background-color: rgb(7, 7, 192);
+    color: white;
+}
+
+#Principal-Agregar-Botones #Boton-Limpiar:hover,
+#Principal-Visualizar #Botones-piePagina #Boton-Limpiar:hover {
+    background-color: rgb(34, 32, 126);
+}
+
+
+
+
+
+
+#Principal-Agregar-Botones {
+    position: fixed; /* Posicionamiento fijo */
+    top: 0; /* Desde la parte superior */
+    left: 0; /* Desde la parte izquierda */
+    width: calc(100% - 215px); /* Ancho dinámico basado en el ancho del menú lateral */
+    flex-grow: 1; /* Ocupa el espacio restante */
+    background-color: white; /* Color de fondo */
+    padding: 15px 15px; /* Relleno interno */
+    margin: 5px 5px 5px 210px; /* Margen exterior */
+    height: 14vh; /* Toma casi toda la altura del viewport */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#Principal-Agregar-Botones label {
+    padding-left: 2px;
+    margin: 0px;
+}
+
+#Principal-Agregar-Botones .dropdown .dropdown-menu {
+    max-height: 500px; /* Ajusta la altura máxima según tus necesidades */
+    overflow-y: auto;
+    --bs-dropdown-font-size: 13px
+}
+
+#Principal-Agregar-Botones .form-control, #Principal-Agregar-Botones label {
+    font-size: 16px
+}
+
+#Principal-Agregar-Botones .dropdown .dropdown-toggle {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 292px;
+    display: inline-block;
+    vertical-align: middle;
+    --bs-btn-font-size: 14px;
+    min-width: 200px;
+    background: #223775;
+    height: 38px;
+}
+
+#Principal-Agregar-Botones .dropdown .dropdown-toggle:hover {
+    background: #e0792a;
+    border-color: white;
+}
+
+#Principal-Agregar-Botones .form-control {
+    min-width: 200px;
+}
+
+#Principal-Agregar-Botones .dropdown-toggle::after {
+    vertical-align: middle;
+}
+
+#Principal-Agregar-Botones #Botones-Accion {
+    display: grid;
+}
+
+#Principal-Agregar-Botones #Boton-Limpiar {
+    margin: 0px 0px 5px 0px;
+    width: 120px;
+}
+
+#Principal-Agregar-Botones #Boton-Aplicar {
+    margin: 0px 0px 0px 0px;
+}
+
+#Principal-Agregar-Pendientes {
+    position: fixed; /* Posicionamiento fijo */
+    top: 0; /* Desde la parte superior */
+    left: 0; /* Desde la parte izquierda */
+    width: calc(50% - 150px); /* Ancho dinámico basado en el ancho del menú lateral */
+    flex-grow: 1; /* Ocupa el espacio restante */
+    background-color: white; /* Color de fondo */
+    padding: 15px 15px; /* Relleno interno */
+    margin: calc(14vh + 10px) 5px 5px 210px; /* Margen exterior */
+    height: calc(98vh - 14vh - 5px); /* Toma casi toda la altura del viewport */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+    z-index: 0;
+}
+
+#Principal-Agregar-Agregados #Titulo,
+#Principal-Agregar-Pendientes #Titulo {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 2px;
+    
+    font-size: 24px;          /* Tamaño de fuente */
+    font-weight: bold;        /* Negrita */
+    color: #333;              /* Color del texto */
+    text-align: center;       /* Asegura que el texto esté centrado */
+    background-color: #f0f0f0;/* Color de fondo */
+    border-radius: 8px;       /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra */
+}
+
+#Principal-Agregar-Agregados #Titulo span,
+#Principal-Agregar-Pendientes #Titulo span {
+    font-size: 20px;
+}
+
+#Principal-Agregar-Agregados .tabla-container,
+#Principal-Agregar-Pendientes .tabla-container {
+    overflow: auto;
+    height: 72vh;
+    width: 100%;
+    border-radius: 5px;
+}
+
+
+
+
+
+
+#Principal-Agregar-Agregados {
+    position: fixed; /* Posicionamiento fijo */
+    top: 0; /* Desde la parte superior */
+    left: 0; /* Desde la parte izquierda */
+    width: calc(50% - 72px); /* Ancho dinámico basado en el ancho del menú lateral */
+    flex-grow: 1; /* Ocupa el espacio restante */
+    background-color: white; /* Color de fondo */
+    padding: 15px 15px; /* Relleno interno */
+    margin: calc(14vh + 10px) 5px 5px calc(50% + 66px); /* Margen exterior */
+    height: calc(98vh - 14vh - 5px); /* Toma casi toda la altura del viewport */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+
+
+
+
+
+
+#Principal-Visualizar #Principal-ValidarMovil {
+    text-align: center;
+}
+
+#Principal-ValidarMovil #Cartas {
+    display: flex;
+    width: 100%;
+}
+
+#Principal-ValidarMovil .carta-container {
+    overflow: auto;
+    height: 86vh;
+    width: 75%;
+    border-radius: 5px;
+}
+
+#Principal-ValidarMovil .Carta {
+    border: 1px solid #223775;
+    border-radius: 8px;
+    padding-left: 12px;
+    padding-right: 12px;
+    margin: 10px 0px 10px 0px;
+}
+
+#Principal-ValidarMovil .Carta h1, #Principal-ValidarMovil .Carta h2, #Principal-ValidarMovil .Carta h5 {
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+#Principal-ValidarMovil .Carta p, #Principal-ValidarMovil .Carta ul li {
+    color: #fff;
+    font-size: 15px;
+}
+
+#Principal-ValidarMovil .Carta #Integrantes {
+    text-align: left;
+    padding: 20px 10px 20px 20px;
+}
+
+#Principal-ValidarMovil .Carta #Movil {
+    text-align: left;
+    padding: 20px 10px 20px 10px;
+}
+
+#Principal-ValidarMovil .Carta #Movil p {
+    width: 340px;
+}
+
+#Principal-ValidarMovil .Carta #Placa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 20px 20px 10px;
+}
+
+#Principal-ValidarMovil .Carta #Placa h1 {
+    font-size: 34px;
+}
+
+#Principal-ValidarMovil #Carta-naranja {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 20px 20px 10px;
+    background-color: orange;
+}
+
+#Principal-ValidarMovil #Carta-verde {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 20px 20px 10px;
+    background-color: green;
+}
+
+#Principal-ValidarMovil #Carta-rojo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 20px 20px 10px;
+    background-color: red;
+}
+
+#Principal-ValidarMovil #Filtros {
+    padding: 0 10px 0 10px;
+}
+
+#Principal-ValidarMovil #Filtros h3 {
+    padding: 5px 0px 0px 0px;
+}
+
+#Principal-ValidarMovil #Filtros .row {
+    padding: 5px 0px 5px 0px;
+}
+
+#Principal-ValidarMovil #Filtros button {
+    width: 150px;
+}
+
+#Principal-ValidarMovil #Datos {
+    width: 25%;
+}
+
+#Principal-ValidarMovil #BACK-UP h3 {
+    margin: 20px 0px 10px 0px;
+}
+
+#Principal-ValidarMovil .Carta #IntegrantesBackUp {
+    text-align: left;
+    padding: 20px 10px 20px 20px;
+    background-color: #373e72;
+}
+
+#Principal-ValidarMovil #Tabla-Backup {
+    width: 100%; /* Ancho dinámico basado en =el ancho del menú lateral */
+    flex-grow: 1; /* Ocupa el espacio restante */
+    background-color: white; /* Color de fondo */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 0px 10px;
+}
+
+#Principal-ValidarMovil .tabla-container {
+    overflow: auto;
+    height: 45vh;
+    width: 100%;
+    border-radius: 5px;
+}
+
+#Principal-ValidarMovil #piePagina {
+    padding-left: 10px;
+}
