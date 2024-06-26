@@ -24,7 +24,7 @@ const ValidarMovil = ({ role }) => {
     };
 
     const cargarDatos = () => {
-        fetch('http://localhost:8080/capacidad/Todo')
+        fetch('http://sicteferias.from-co.net:8120/capacidad/Todo')
             .then(response => response.json())
             .then(data => {
 

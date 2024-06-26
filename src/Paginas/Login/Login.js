@@ -16,7 +16,7 @@ const Login = () => {
         console.log(JSON.stringify({ correo: username, contrasena: password }),);
 
         try {
-            const response = await fetch('http://localhost:8080/user/login/login', {
+            const response = await fetch('http://sicteferias.from-co.net:8120/user/login/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json', // Cambia el tipo de contenido a application/json
