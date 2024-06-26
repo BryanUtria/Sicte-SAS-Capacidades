@@ -27,7 +27,7 @@ const Agregar = ({ role }) => {
     const [isPlacaValida, setIsPlacaValida] = useState(true);
 
     const cargarDatosMovil = () => {
-        fetch('http://sicteferias.from-co.net:8120/capacidad/Movil')
+        fetch('https://sicteferias.from-co.net:8120/capacidad/Movil')
             .then(response => response.json())
             .then(data => {
                 setDatosMovil(data);
@@ -36,7 +36,7 @@ const Agregar = ({ role }) => {
     };
 
     const cargarDatos = () => {
-        fetch('http://sicteferias.from-co.net:8120/capacidad/ContinuaEnPlantaSinCapacidad', {
+        fetch('https://sicteferias.from-co.net:8120/capacidad/ContinuaEnPlantaSinCapacidad', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -52,7 +52,7 @@ const Agregar = ({ role }) => {
     };
 
     const cargarDatosAgregados = () => {
-        fetch('http://sicteferias.from-co.net:8120/capacidad/Todo')
+        fetch('https://sicteferias.from-co.net:8120/capacidad/Todo')
             .then(response => response.json())
             .then(data => {
                 const datosFiltrados = data.filter(item => {
@@ -289,7 +289,7 @@ const Agregar = ({ role }) => {
             if (!validarCapacidadMovil(data)) {
                 toast.error(`La movil con placa ${data.placa} ha excedido su capacidad.`);
             } else {
-                return fetch('http://sicteferias.from-co.net:8120/capacidad/agregarPersonal', {
+                return fetch('https://sicteferias.from-co.net:8120/capacidad/agregarPersonal', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',

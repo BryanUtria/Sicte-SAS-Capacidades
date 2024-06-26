@@ -18,7 +18,7 @@ const Visualizar = ({ role }) => {
     const [todasSeleccionadas, setTodasSeleccionadas] = useState(false);
 
     const cargarDatos = () => {
-        fetch('http://sicteferias.from-co.net:8120/capacidad/Todo')
+        fetch('https://sicteferias.from-co.net:8120/capacidad/Todo')
             .then(response => response.json())
             .then(data => {
                 setDatos(data);
@@ -127,7 +127,7 @@ const Visualizar = ({ role }) => {
     const clickAplicar = () => {
         const filasArray = Array.from(filasSeleccionadas);
         const promesasEliminacion = filasArray.map(cedula => {
-            return fetch('http://sicteferias.from-co.net:8120/capacidad/eliminar-filas', {
+            return fetch('https://sicteferias.from-co.net:8120/capacidad/eliminar-filas', {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json'

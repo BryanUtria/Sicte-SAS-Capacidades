@@ -14,7 +14,7 @@ const Retirados = ({ role }) => {
     const [totalItems, setTotalItems] = useState(0);
 
     const cargarDatos = () => {
-        fetch('http://sicteferias.from-co.net:8120/capacidad/NoContinuaEnPlanta')
+        fetch('https://sicteferias.from-co.net:8120/capacidad/NoContinuaEnPlanta')
             .then(response => response.json())
             .then(data => {
                 setDatos(data);
